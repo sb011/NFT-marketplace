@@ -54,7 +54,7 @@ contract NFTmarket is ReentrancyGuard {
         return listingPrice;
     }
 
-    function mintMarketItem(
+    function makeMarketItem(
         address nftContract,
         uint256 tokenId,
         uint256 price
@@ -105,16 +105,15 @@ contract NFTmarket is ReentrancyGuard {
 
         idToMarketToken[itemId].seller.transfer(msg.value);
 
-        IERC721(ntfContract).transferFrom(address(this), msg.sender, tokenId);
-
         idToMarketToken[itemId].owner = payable(msg.sender);
         idToMarketToken[itemId].sold = true;
+        IERC721(ntfContract).transferFrom(address(this), msg.sender, tokenId);
         _tokensSold.increment();
 
         payable(owner).transfer(listingPrice);
     }
 
-    function fetchMarketToken() public view returns (MarketToken[] memory) {
+    function fetchMarketTokens() public view returns (MarketToken[] memory) {
         uint256 itemCount = _tokenIds.current();
         uint256 unsoldItemCount = _tokenIds.current() - _tokensSold.current();
         uint256 currentIndex = 0;
