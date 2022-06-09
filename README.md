@@ -1,15 +1,27 @@
-# Basic Sample Hardhat Project
+# NFT marketplace
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, a sample script that deploys that contract, and an example of a task implementation, which simply lists the available accounts.
+This project is developed in Web3 app with ether, hardhat, Next.js, tailwind css, web3modal, @nomiclabs, Solidity
 
-Try running some of the following tasks:
+Users can mint NFTs with this web3 app. A user can see all of the NFts available on the market and buy them.
 
-```shell
-npx hardhat accounts
-npx hardhat compile
-npx hardhat clean
-npx hardhat test
-npx hardhat node
-node scripts/sample-script.js
-npx hardhat help
+## Major Functionalities: 
+- Login with metamask
+- sell NFTs
+- buy NFTs
+
+## Getting started
+Follow these steps to run this project in your local computer.
+1. Clone Repository
 ```
+git clone https://github.com/sb011/NFT-marketplace.git
+```
+2. To Start project
+```
+npm run dev
+```
+3. To get metamask account for development
+```
+npx hardhat node
+```
+
+## Screenshots :
